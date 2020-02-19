@@ -58,9 +58,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45626EAA23FD7D5400BAF8A1 /* Performance */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Performance;
+			sourceTree = "<group>";
+		};
 		46AA32C321212A28003AC495 = {
 			isa = PBXGroup;
 			children = (
+				45626EAA23FD7D5400BAF8A1 /* Performance */,
 				46AA32CE21212A28003AC495 /* JournalCoreData */,
 				46AA32CD21212A28003AC495 /* Products */,
 			);

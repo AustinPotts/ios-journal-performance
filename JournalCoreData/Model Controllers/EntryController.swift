@@ -90,11 +90,16 @@ class EntryController {
         }.resume()
     }
     
+    
+    // Running slow. Needs to be done on a background context
     func fetchEntriesFromServer(completion: @escaping (([EntryRepresentation]?, Error?) -> Void) = { _,_ in }) {
         
         let requestURL = baseURL.appendingPathExtension("json")
         
         URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
+            
+            
+            
             
             if let error = error {
                 NSLog("Error fetching entries from server: \(error)")
@@ -107,6 +112,8 @@ class EntryController {
                 completion(nil, NSError())
                 return
             }
+            
+            
 
             do {
                 let entryReps = try JSONDecoder().decode([String: EntryRepresentation].self, from: data).map({$0.value})
